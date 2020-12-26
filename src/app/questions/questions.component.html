@@ -6,6 +6,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script language=”JavaScript”>
+
+    var frmvalidator = new Validator("contact_form"); 
+    frmvalidator.addValidation("name","req","Please provide your name"); 
+    frmvalidator.addValidation("emailid","req","Please provide your email");
+    frmvalidator.addValidation("textinput","req","Please enter your query");
+     frmvalidator.addValidation("emailid","email", "Please enter a valid email address");
+      </script>
 </head>
 <body>  
     <div class="container">
@@ -14,7 +22,7 @@
       <h1 class="display-3">Questions</h1>
       <h6>Please fill the form below. This will automatically email me your questions with your name and email address</h6>
       <form>
-        <div class="form-group">
+        <div class="form-group" method=”post” name=”contact_form” action=”contact-form-handler.php”>
             <label for="Name">Name</label>
             <input type="name" class="form-control" id="name" aria-describedby="namehelp" placeholder="Enter your Name">
           </div>
